@@ -8,16 +8,16 @@ let num1 = num.reduce((acc, curr) => {
 }, 0);
 console.log(num1);
 
-Array.prototype.myReduce = function (cb, initialValue=this[0]) {
-    if (this.length == 0) return null;
-    let i=1;
-  if(initialValue !=this[0])  i=0
-    let acc = initialValue;
-    for (i; i < this.length; i++) {
-      acc = cb(acc, this[i], i, this);
-    }
-    return acc;
-  };
+Array.prototype.myReduce = function (cb, initialValue = this[0]) {
+  if (this.length == 0) return null;
+  let i = 1;
+  if (initialValue != this[0]) i = 0;
+  let acc = initialValue;
+  for (i; i < this.length; i++) {
+    acc = cb(acc, this[i], i, this);
+  }
+  return acc;
+};
 
 let num5 = [];
 let num2 = num.myReduce((acc, curr) => {
